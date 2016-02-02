@@ -10,7 +10,9 @@ Router.map(function() {
     this.route('new');
     this.route('show', { path: ':user_id'})
   });
-  this.route('to-dos', { path: '/to-dos/:to_do_id'});
+  this.route('to-dos', function() {
+    this.route('show', { path: ':to_do_id'})
+  });
 });
 
 export default Router;
