@@ -1,2 +1,14 @@
 <p>Name: {{model.firstName}} {{model.lastName}}</p>
 <p>Email: {{model.email}}</p>
+
+<h3>To Dos:</h3>
+<ul>
+  {{#each model.toDos as |toDo|}}
+    <li>
+      {{#link-to 'users.user.toDo' toDo}}
+        {{toDo.description}}
+      {{/link-to}}
+      
+    </li>
+  {{/each}}
+</ul>
