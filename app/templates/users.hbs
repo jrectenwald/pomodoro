@@ -5,7 +5,7 @@
 <ul>
   {{#each model.toDos as |toDo|}}
     <li>
-      {{#link-to 'users.user.toDo' toDo}}
+      {{#link-to 'to-dos' toDo}}
         {{toDo.description}}
       {{/link-to}}
       
