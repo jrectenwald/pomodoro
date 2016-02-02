@@ -1,13 +1,12 @@
-<p>Name: {{model.firstName}} {{model.lastName}}</p>
-<p>Email: {{model.email}}</p>
-
-<h3>To Dos:</h3>
+<h3>Users:</h3>
 <ul>
-  {{#each model.toDos as |toDo|}}
+  {{#each model as |user|}}
     <li>
-      {{#link-to 'to-dos' toDo}}
-        {{toDo.description}}
+      {{#link-to 'users.show' user}}
+        {{user.firstName}} {{user.lastName}}
       {{/link-to}}
     </li>
   {{/each}}
 </ul>
+
+{{outlet}}
