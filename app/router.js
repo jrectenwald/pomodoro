@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('users', { path: '/users/:user_id'});
+  this.route('users.new', { path: '/users/new'});
   this.route('to-dos', { path: '/to-dos/:to_do_id'});
 });
 
