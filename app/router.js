@@ -6,10 +6,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('users', function() {
+  this.resource('users', function() {
     this.route('new');
     this.route('user', { path: ':user_id'}, function() {
-      this.route('to-dos', function() {
+      this.resource('to-dos', function() {
         this.route('to-do', { path: ':to_do_id'});
         this.route('new');
       });
