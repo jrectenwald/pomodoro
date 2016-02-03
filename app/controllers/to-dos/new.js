@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
       }
     }, 
     cancel: function(){
-      this.transitionTo('users');
+      this.transitionToRoute('to-dos');
     }
   }
 });
