@@ -7,6 +7,7 @@ export default Ember.Route.extend({
 
   actions: {
     save: function() {
+      alert('test');
       this.modelFor('to-dos.new').save();
       return false;
     }
