@@ -1,0 +1,7 @@
+<p>Task: {{model.description}}</p>
+
+<p>
+  {{#link-to 'users.user' model.user.id}}
+    Back to {{model.user.firstName}}'s Page
+  {{/link-to}}
+</p>
