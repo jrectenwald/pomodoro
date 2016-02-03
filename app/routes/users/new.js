@@ -1,14 +1,18 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
-    return this.store.createRecord('user');
+  model() {
+    return {user: this.store.createRecord('user')};
+  }, 
+  setupController(controller, models){
+    controller.set('user', models.user);
   },
-
-  actions: {
-    save: function() {
-      this.modelFor('users.new').save();
-      return false;
+  resetController(controller, isExiting){
+    if(isExiting){
+      var user = controller.get('user');
+      if(user.get('isNew')){
+        user.destroyRecord();
+      }
     }
   }
 });
