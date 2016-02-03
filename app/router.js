@@ -6,10 +6,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('users', function() {
+  this.route('users', { resetNamespace: true }, function() {
     this.route('new');
     this.route('user', { path: ':user_id'}, function() {
-      this.resource('to-dos', function() {
+      this.route('to-dos', { resetNamespace: true }, function() {
         this.route('to-do', { path: ':to_do_id'});
         this.route('new');
       });
