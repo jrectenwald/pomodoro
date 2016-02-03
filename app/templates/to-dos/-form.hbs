@@ -1,10 +1,17 @@
-<form {{action "save" on="submit"}}> 
+<form {{action 'save' todo on="submit"}}>
+  <p>{{errorMessage}}</p>
   <p>
-    <label>Description:
-      {{input value=model.description}}
-    </label>
+    <label>To Do Description</label>
+    {{input value=todo.description}}
   </p>
-  {{input type="hidden" valueBinding="firstName"}}
-  <input type="submit" value="Save"/>
-  <button {{action "cancel"}}>Cancel</button> 
+  <p><label>User</label>
+    {{#x-select value=todo.user}}
+    {{#x-option value=null}}Please select user.{{/x-option}}
+      {{#each users as |user|}}
+        {{#x-option value=user}}{{user.firstName}}{{/x-option}}
+      {{/each}}
+  {{/x-select}}
+  </p>
+  <button type="submit" value="Add todo" class="button">Add todo</button>
+  <button {{action "cancel"}}>Cancel</button>
 </form>
