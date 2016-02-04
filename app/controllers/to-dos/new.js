@@ -1,26 +1,26 @@
-import Ember from 'ember';
+export default Ember.Controller.extend({ 
+  isValid: Ember.computed(
+    'model.description',
+    {
+      get() {
+        return !Ember.isEmpty(this.get('model.description')) 
+      }
+    }), 
 
-export default Ember.Controller.extend({
-  hasDescription: Ember.computed.notEmpty('todo.description'),
-  hasUser: Ember.computed.notEmpty('todo.user.id'),
-  isValid: Ember.computed.and(
-    'hasDescription'
-    // 'hasUser'
-  ), 
-  actions:{
-    save: function(){
-      if (this.get('isValid')){
-        let todo = this.get('todo');
-        todo.save().then((todo) => {
-          this.transitionToRoute('users.user');
+  actions: {
+    save() {
+      if (this.get('isValid')) { 
+        this.get('model').save().then((todo) => {
+          this.transitionToRoute('to-dos.to-do', todo); 
         });
+      } else {
+        this.set('errorMessage', 'You have to fill all the fields');
       }
-      else{
-        this.set('errorMessage', "Please fill in all fields.")
-      }
+      return false; 
     },
-    cancel: function(){
-      this.transitionToRoute('to-dos');
+    cancel() { 
+      this.transitionToRoute('home');
+      return false; 
     }
   }
 });
