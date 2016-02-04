@@ -1,7 +1,29 @@
 <p>Task: {{model.description}}</p>
 
+<h3>{{model.pomodoros.length}} Pomodoros</h3>
+<table>
+  <thead>
+    <tr> 
+      <th>Name</th> 
+      <th></th>
+    </tr>
+  </thead>
+<tbody>
+    {{#each model.pomodoros as |pomodoro|}}
+      <tr>
+        <td id="home-table-name">{{link-to pomodoro.task "pomodoros.pomodoro" pomodoro}}</td>
+       {{!--  <td id="home-table-edit">{{link-to "Edit" "pomodoros.edit" pomodoro}}</td>
+        <td id="home-table-delete"><a href="#" {{action "delete" pomodoro}}>Delete</a></td> --}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
 <p>
   {{#link-to 'users.user' model.user.id}}
     Back to {{model.user.firstName}}'s Page
   {{/link-to}}
 </p>
+
+{{outlet}}
