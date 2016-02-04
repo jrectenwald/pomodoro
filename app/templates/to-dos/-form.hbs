@@ -6,11 +6,8 @@
   </p>
   <p><label>User</label>
     {{#x-select value=todo.user}}
-    {{#x-option value=null}}Please select user.{{/x-option}}
-      {{#each users as |user|}}
-        {{#x-option value=user}}{{user.firstName}}{{/x-option}}
-      {{/each}}
-  {{/x-select}}
+      {{#x-option value=user}}{{user.firstName}}{{/x-option}}
+    {{/x-select}}
   </p>
   <button type="submit" value="Add todo" class="button">Add todo</button>
   <button {{action "cancel"}}>Cancel</button>
