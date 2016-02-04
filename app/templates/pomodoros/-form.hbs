@@ -1,0 +1,9 @@
+<form {{action 'save' model on="submit"}}>
+  <p>{{errorMessage}}</p>
+  <p>
+    <label>Task:</label>
+    {{input value=model.task}}
+  </p>
+  <button type="submit" value="Add todo" class="button">Pomodoro</button>
+  <button {{action "cancel"}}>Cancel</button>
+</form>

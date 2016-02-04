@@ -18,7 +18,11 @@
     {{/each}}
   </tbody>
 </table>
-
+<p>
+  {{#link-to 'pomodoros.new' model}}
+    Add a New Pomodoro
+  {{/link-to}}
+</p>
 
 <p>
   {{#link-to 'users.user' model.user.id}}
