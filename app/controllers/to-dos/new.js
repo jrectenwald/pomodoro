@@ -4,8 +4,8 @@ export default Ember.Controller.extend({
   hasDescription: Ember.computed.notEmpty('todo.description'),
   hasUser: Ember.computed.notEmpty('todo.user.id'),
   isValid: Ember.computed.and(
-    'hasDescription',
-    'hasUser'
+    'hasDescription'
+    // 'hasUser'
   ), 
   actions:{
     save: function(){
@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
       else{
         this.set('errorMessage', "Please fill in all fields.")
       }
-    }, 
+    },
     cancel: function(){
       this.transitionToRoute('to-dos');
     }
