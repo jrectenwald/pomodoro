@@ -5,8 +5,8 @@ export default Ember.Route.extend({
     return this.store.findAll('user');
   },
   actions: {
-    delete(friend) { 
-      friend.destroyRecord().then(() => {
+    delete(user) { 
+      user.destroyRecord().then(() => {
         this.transitionTo('home'); 
       });
     }
