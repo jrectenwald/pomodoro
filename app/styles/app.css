@@ -12,14 +12,20 @@ table {
   margin-right: auto;
 }
 
-#table-name {
+#home-table-name {
   width: 160px;
 }
 
-#table-edit {
+#home-table-edit {
   width: 40px;
 }
 
-#table-delete {
+#home-table-delete {
   width: 40px;
+}
+
+.user-td {
+  text-align: right;
+  margin-right: 10px;
+  padding: 4px;
 }

@@ -12,6 +12,9 @@ Router.map(function() {
       this.route('to-dos', { resetNamespace: true }, function() {
         this.route('to-do', { path: ':to_do_id'});
         this.route('new');
+        this.route('edit', {
+          path: ':user_id/edit'
+        });
       });
     });
 
