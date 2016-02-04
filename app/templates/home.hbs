@@ -11,7 +11,8 @@
     {{#each model as |user|}}
       <tr>
         <td id="table-name">{{link-to user.fullName "users.user" user}}</td>
-        <td><a href="#" {{action "delete" user}}>Delete</a></td>
+        <td id="table-edit">{{link-to "Edit" "users.edit" user}}</td>
+        <td id="table-delete"><a href="#" {{action "delete" user}}>Delete</a></td>
       </tr>
     {{/each}}
   </tbody>
