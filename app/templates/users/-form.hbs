@@ -1,23 +1,23 @@
-<form {{action 'save' user on="submit"}}>
+<form {{action 'save' model on="submit"}}>
   <p>{{errorMessage}}</p>
   <p>
     <label>First Name:
-      {{input value=user.firstName}}
+      {{input value=model.firstName}}
     </label>
   </p>
   <p>
     <label>Last Name:
-      {{input value=user.lastName }}
+      {{input value=model.lastName }}
     </label>
   </p>
   <p> 
     <label>Email:
-      {{input value=user.email}}
+      {{input value=model.email}}
     </label>
   </p>
   <p> 
     <label>Password:
-      {{input value=user.password}}
+      {{input value=model.password}}
     </label>
   </p>
   <input type="submit" value="Save"/>

@@ -13,9 +13,8 @@ export default Ember.Controller.extend({
   ), 
   actions:{
     save: function(){
-      debugger;
       if (this.get('isValid')){
-        let user = this.get('user');
+        let user = this.get('model');
         user.save().then((user) => {
           this.transitionToRoute('home');
         });
