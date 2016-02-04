@@ -7,7 +7,7 @@ export default Ember.Route.extend({
   actions: {
     delete(todo) { 
       todo.destroyRecord().then(() => {
-        this.transitionTo('to-dos.user'); 
+        this.transitionTo('to-dos.to-do'); 
       });
     }
   }

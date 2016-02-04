@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   },
   delete(pomodoro) { 
       pomodoro.destroyRecord().then(() => {
-        this.transitionTo('pomodoros.pomodoro'); 
+        this.transitionTo('to-dos.to-do'); 
       });
     }
 });
