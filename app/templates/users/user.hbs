@@ -2,19 +2,19 @@
 <p>Email: {{model.email}}</p>
 {{link-to 'edit-profile' 'users.edit' model}}
 
-<h1>To Dos</h1>
-<h2>{{model.length}}</h2>
+<h2>{{model.toDos.length}} To Dos</h2>
 <table>
   <thead>
     <tr> 
       <th>Name</th> 
-      <th></th>
+      <th>Pomodoros</th>
     </tr>
   </thead>
 <tbody>
     {{#each model.toDos as |todo|}}
       <tr>
         <td class="user-td">{{link-to todo.description "to-dos.to-do" todo}}</td>
+        <td id="home-table-name">{{todo.pomodoros.length}}</td>
         <td class="user-td">{{link-to "Edit" "to-dos.edit" todo}}</td>
         <td class="user-td"><a href="#" {{action "delete" todo}}>Delete</a></td>
       </tr>
