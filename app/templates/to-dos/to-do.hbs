@@ -12,8 +12,8 @@
     {{#each model.pomodoros as |pomodoro|}}
       <tr>
         <td id="home-table-name">{{link-to pomodoro.task "pomodoros.pomodoro" pomodoro}}</td>
-       {{!--  <td id="home-table-edit">{{link-to "Edit" "pomodoros.edit" pomodoro}}</td>
-        <td id="home-table-delete"><a href="#" {{action "delete" pomodoro}}>Delete</a></td> --}}
+        <td id="home-table-edit">{{link-to "Edit" "pomodoros.edit" pomodoro}}</td>
+        <td id="home-table-delete"><a href="#" {{action "delete" pomodoro}}>Delete</a></td>
       </tr>
     {{/each}}
   </tbody>
