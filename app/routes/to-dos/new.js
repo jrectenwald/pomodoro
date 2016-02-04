@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   model(){
     return Ember.RSVP.hash({
       todo: this.store.createRecord('to-do'),
-      users: this.store.findAll('user'),
+      users: this.store.findAll('user')
     });
   }, 
   setupController(controller, models){

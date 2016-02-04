@@ -13,10 +13,11 @@ export default Ember.Controller.extend({
   ), 
   actions:{
     save: function(){
+      debugger;
       if (this.get('isValid')){
         let user = this.get('user');
         user.save().then((user) => {
-          this.transitionToRoute('users');
+          this.transitionToRoute('home');
         });
       }
       else{
@@ -24,7 +25,7 @@ export default Ember.Controller.extend({
       }
     }, 
     cancel: function(){
-      this.transitionToRoute('users');
+      this.transitionToRoute('home');
     }
   }
 });

@@ -1,14 +1,1 @@
-<h3>Users:</h3>
-<ul>
-  {{#each model as |user|}}
-    <li>
-      {{#link-to 'users.user' user}}
-        {{user.firstName}} {{user.lastName}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
-<br>
-{{link-to 'new user' 'users.new'}}
-
 {{outlet}}
