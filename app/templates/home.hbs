@@ -1,12 +1,19 @@
-<h3>Users:</h3>
-<ul>
-  {{#each model as |user|}}
-    <li>
-      {{#link-to 'users.user' user}}
-        {{user.firstName}} {{user.lastName}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
-<br>
+<h1>Users</h1>
+<h2>Site Population: {{model.length}}</h2>
+<table>
+  <thead>
+    <tr> 
+      <th>Name</th> 
+      <th></th>
+    </tr>
+  </thead>
+<tbody>
+    {{#each model as |user|}}
+      <tr>
+        <td id="table-name">{{link-to user.fullName "users.user" user}}</td>
+        <td><a href="#" {{action "delete" user}}>Delete</a></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
 {{link-to 'new user' 'users.new'}}

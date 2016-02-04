@@ -1,30 +1,32 @@
-import Ember from 'ember';
+export default Ember.Controller.extend({ 
+  isValid: Ember.computed(
+    'model.firstName',
+    'model.lastName',
+    'model.email',
+    'model.password',
+    {
+      get() {
+        return !Ember.isEmpty(this.get('model.firstName')) 
+        && !Ember.isEmpty(this.get('model.lastName')) 
+        && !Ember.isEmpty(this.get('model.email')) 
+        && !Ember.isEmpty(this.get('model.password'));
+      }
+    }), 
 
-export default Ember.Controller.extend({
-  hasfirstName: Ember.computed.notEmpty('user.firstName'),
-  hasLastName: Ember.computed.notEmpty('user.lastName'),
-  hasEmail: Ember.computed.notEmpty('user.email'),
-  hasPassword: Ember.computed.notEmpty('user.password'),
-  isValid: Ember.computed.and(
-    'hasfirstName',
-    'hasLastName',
-    'hasEmail',
-    'hasPassword'
-  ), 
-  actions:{
-    save: function(){
-      if (this.get('isValid')){
-        let user = this.get('model');
-        user.save().then((user) => {
-          this.transitionToRoute('home');
+  actions: {
+    save() {
+      if (this.get('isValid')) { 
+        this.get('model').save().then((user) => {
+          this.transitionToRoute('users.user', user); 
         });
+      } else {
+        this.set('errorMessage', 'You have to fill all the fields');
       }
-      else{
-        this.set('errorMessage', "Please fill in all fields.")
-      }
-    }, 
-    cancel: function(){
-      this.transitionToRoute('home');
+      return false; 
+    },
+    cancel() { 
+      this.transitionToRoute('users');
+      return false; 
     }
   }
 });
