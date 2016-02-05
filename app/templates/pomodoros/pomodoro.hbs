@@ -1,8 +1,11 @@
 <p>Pomodoro: {{model.task}}</p>
+<div id='timer'></div>
+<div class='timeleft'>{{timer.timeLeft}}</div>
 
-
-<p>
-  {{#link-to 'to-dos.to-do' model.toDo}}
-    Back to {{model.toDo.description}}
-  {{/link-to}}
-</p>
+ <div>
+      <button class='btn btn-large btn-primary' {{action "pomodoro"}}>Start Pomodoro</button>
+      <button class='btn btn-large btn-success' {{action "break"}}>Take a Break</button>
+      <button class='btn btn-large btn-warning'   {{action "pause"}}>Pause</button>
+      <button class='btn btn-large btn-info'    {{action "unpause"}}>Unpause</button>
+      <button class='btn btn-large btn-danger'  {{action "stop"}}>Reset</button>
+</div>

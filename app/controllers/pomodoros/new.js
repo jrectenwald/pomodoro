@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
       return false; 
     },
     cancel() { 
-      this.transitionToRoute('home');
+      this.transitionToRoute('to-dos.to-do');
       return false; 
     }
   }

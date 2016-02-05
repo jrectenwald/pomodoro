@@ -1,4 +1,4 @@
-<p>Name: {{model.firstName}} {{model.lastName}}</p>
+<p>Name: {{link-to model.fullName 'users.user' model}}</p>
 <p>Email: {{model.email}}</p>
 {{link-to 'edit-profile' 'users.edit' model}}
 

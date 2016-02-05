@@ -4,13 +4,9 @@ export default Ember.Controller.extend({
   isValid: Ember.computed(
     'model.firstName',
     'model.lastName',
-    'model.email',
-    'model.password',
       function() {
         return !Ember.isEmpty(this.get('model.firstName')) 
         && !Ember.isEmpty(this.get('model.lastName')) 
-        && !Ember.isEmpty(this.get('model.email')) 
-        && !Ember.isEmpty(this.get('model.password'));
   }),
 
   actions: {
